@@ -65,34 +65,6 @@ function eventtickets() {
           </div>
         </div>
       </div>
-      <div className="border-1 rounded-2xl text-center absolute bottom-0 transform -translate-x-1/2 -translate-y-1/2 left-1/2">
-        <div className="grid grid-flow-col gap-3 text-center auto-cols-max justify-center pt-2">
-          <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
-            <span className="countdown font-mono text-4xl">
-              <span style={{ '--value': days }}></span>
-            </span>
-            days
-          </div>
-          <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
-            <span className="countdown font-mono text-4xl">
-              <span style={{ '--value': hours }}></span>
-            </span>
-            hours
-          </div>
-          <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
-            <span className="countdown font-mono text-4xl">
-              <span style={{ '--value': minutes }}></span>
-            </span>
-            min
-          </div>
-          <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
-            <span className="countdown font-mono text-4xl">
-              <span style={{ '--value': seconds }}></span>
-            </span>
-            sec
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
