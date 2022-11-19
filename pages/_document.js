@@ -6,13 +6,16 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
             rel="stylesheet"
           />
         </Head>
-        <title>Return of The Black Affair</title>
         <body>
           <Main />
           <NextScript />
