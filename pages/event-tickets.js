@@ -34,10 +34,38 @@ function eventtickets() {
   // console.log(timeLeft)
 
   return (
-    <div className="bg-[url('/flyer.png')] min-h-screen bg-center bg-contain bg-no-repeat">
-      <div className="absolute top-0 bg-black bg-opacity-40 w-full h-screen" />
-      <div className="border-1 glassf rounded-2xl py-4 text-center absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 left-1/2">
+    <div className="bg-[url('/flyer.png')] min-h-screen bg-center bg-contain bg-no-repeat overflow-hidden">
+      <div className="absolute top-0 bg-black bg-opacity-60 w-full h-screen animate-pulse" />
+      <div className="border-1 rounded-2xl text-center absolute top-24 transform -translate-x-1/2 -translate-y-1/2 left-1/2">
         <h1>Tickets Available in</h1>
+        <div className="grid grid-flow-col gap-3 text-center auto-cols-max justify-center pt-2">
+          <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
+            <span className="countdown font-mono text-4xl">
+              <span style={{ '--value': days }}></span>
+            </span>
+            days
+          </div>
+          <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
+            <span className="countdown font-mono text-4xl">
+              <span style={{ '--value': hours }}></span>
+            </span>
+            hours
+          </div>
+          <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
+            <span className="countdown font-mono text-4xl">
+              <span style={{ '--value': minutes }}></span>
+            </span>
+            min
+          </div>
+          <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
+            <span className="countdown font-mono text-4xl">
+              <span style={{ '--value': seconds }}></span>
+            </span>
+            sec
+          </div>
+        </div>
+      </div>
+      <div className="border-1 rounded-2xl text-center absolute bottom-4 transform -translate-x-1/2 -translate-y-1/2 left-1/2">
         <div className="grid grid-flow-col gap-3 text-center auto-cols-max justify-center pt-2">
           <div className="flex flex-col p-2 bg-transparent rounded-box text-white">
             <span className="countdown font-mono text-4xl">
