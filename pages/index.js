@@ -8,5 +8,5 @@ export default function Home() {
     return () => {
       router.push('/event-tickets');
     };
-  }, [router]);
+  });
 }
