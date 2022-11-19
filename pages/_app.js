@@ -21,7 +21,10 @@ function MyApp({ Component, pageProps }) {
         <meta itemProp="image" content="/flyer.png" />
 
         {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://www.rift.love" />
+        <meta
+          property="og:url"
+          content="https://www.returnofblackaffair.com/event-tickets"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="⬛ Return of The Black Affair ⬛" />
         <meta
