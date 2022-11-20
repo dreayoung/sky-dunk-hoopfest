@@ -8,13 +8,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: black;
-  /* background: rgba(71, 64, 64, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  border: 1px solid rgba(71, 64, 64, 0.3); */
+  background-color: #030303;
 }
 
 a {
@@ -27,13 +21,21 @@ a {
 }
 
 h1,
-span {
-  font-family: 'Fjalla One';
+h2,
+.fj {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+span,
+div,
+p {
+  font-family: 'Wire One', sans-serif;
+  letter-spacing: 0.2em;
 }
 
 .glassf {
   background: rgba(71, 64, 64, 0.3);
-  border-radius: 16px;
+  /* border-radius: 16px; */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
