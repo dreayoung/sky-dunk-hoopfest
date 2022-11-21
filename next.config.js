@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
+const withTM = require('next-transpile-modules')([
+  '@square/web-sdk',
+  'react-square-web-payments-sdk',
+]);
 
-module.exports = {
+module.exports = withTM({
   async redirects() {
     return [
       {
@@ -11,6 +15,12 @@ module.exports = {
     ];
   },
   reactStrictMode: true,
+  experimental: {
+    esmExternals: 'loose',
+  },
+  env: {
+    SQ_ACCESS_TKN: process.env.SQ_ACCESS_TKN,
+  },
   webpack(config, options) {
     config.module.rules.push({
       test: /\.(ogg|mp3|wav|mpe?g)$/i,
@@ -25,4 +35,4 @@ module.exports = {
     });
     return config;
   },
-};
+});

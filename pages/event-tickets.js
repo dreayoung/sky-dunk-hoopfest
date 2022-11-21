@@ -2,13 +2,14 @@ import bottle from '../public/champagne.gif';
 import title from '../public/title.png';
 import date from '../public/date.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // import steppers from '../public/audio/steppers.mp3';
 // import useSound from 'use-sound';
 import Promoter from '../components/Promoter';
 import flyer from '../public/flyer.png';
 
-function eventtickets() {
+function Eventtickets() {
   // const [play, { stop }] = useSound(steppers);
 
   return (
@@ -51,7 +52,9 @@ function eventtickets() {
               <p className="text-xl font-bold fj text-gray-300">Flash Sale </p>
               <span className="text-lg">$30.00 incl. $1.99 Fee</span>
               <br />
-              <p className="text-md whitespace-nowrap">All sales final. No refunds</p>
+              <p className="text-md whitespace-nowrap">
+                All sales final. No refunds
+              </p>
               <div className="mt-1 border-transparent rounded-md bg-orange-900 p-2 text-center">
                 purchase
               </div>
@@ -68,13 +71,19 @@ function eventtickets() {
               className="w-[8rem] h-[8rem] rounded-md"
             />
             <div className="">
-              <p className="text-xl font-bold fj text-gray-300">General Adm. </p>
+              <p className="text-xl font-bold fj text-gray-300">
+                General Adm.{' '}
+              </p>
               <span className="text-lg">$40.00 incl. $1.99 Fee</span>
               <br />
-              <p className="text-md whitespace-nowrap">All sales final. No refunds</p>
-              <div className="mt-1 border-transparent rounded-md bg-orange-900 p-2 text-center">
-                purchase
-              </div>
+              <p className="text-md whitespace-nowrap">
+                All sales final. No refunds
+              </p>
+              <Link href="/event-tickets/flashsale">
+                <div className="mt-1 border-transparent rounded-md bg-orange-900 p-2 text-center">
+                  purchase
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -92,4 +101,4 @@ function eventtickets() {
   );
 }
 
-export default eventtickets;
+export default Eventtickets;

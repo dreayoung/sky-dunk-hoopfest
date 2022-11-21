@@ -9,16 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@square/web-sdk": "^2.0.1",
     "daisyui": "^2.41.0",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "moment": "^2.29.4",
     "next": "13.0.4",
+    "next-transpile-modules": "^10.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-h5-audio-player": "^3.8.6",
     "react-icons": "^4.6.0",
     "react-player": "^2.11.0",
+    "react-square-web-payments-sdk": "^3.2.1",
+    "square": "^24.0.0",
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
