@@ -29,19 +29,13 @@ h2,
 span,
 div,
 p {
-  font-family: 'Wire One', sans-serif;
-  letter-spacing: 0.2em;
+  font-family: 'Nanum Gothic Coding', monospace;
 }
 
 .glassf {
   background: rgba(71, 64, 64, 0.3);
-  /* border-radius: 16px; */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
   border: 1px solid rgba(71, 64, 64, 0.3);
 }
-
-/* .flyerbg {
-  background-image: url("flyer.png")
-} */

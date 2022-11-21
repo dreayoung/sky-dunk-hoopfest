@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Footer from '../components/Footer';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
@@ -43,6 +44,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content="/flyer.png" />
       </Head>
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

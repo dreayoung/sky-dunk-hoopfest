@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import React from 'react';
 import { CreditCard, PaymentForm } from 'react-square-web-payments-sdk';
-import { BsCheck2Circle } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 
 function Payment({ name, email, quantity, approved, setApproved }) {
+  const router = useRouter();
+
   const fixedPrice = Number(quantity) * 30;
   const finalP = Number(fixedPrice) * 100;
 
-  console.log('approved', approved);
-
   return (
     <>
-      <span className={`${approved ? 'hidden' : 'block'} pt-4`}>
-        You are paying ${fixedPrice} for {quantity} Tickets
-      </span>
-      <div className={`${approved ? 'hidden' : 'block'} mt-8`}>
+      <hr className="mt-4 text-orange-900" />
+      <div className={`${approved ? 'hidden' : 'block'} mt-2`}>
+        <p className="pt-4 text-2xl uppercase mb-4 text-white">
+          Total:{' '}
+          <span className="text-lg">
+            ${fixedPrice} for {quantity} Ticket(s)
+          </span>
+        </p>
         <PaymentForm
           applicationId="sandbox-sq0idb-8ypAyI05UH7aFbagoCGOTA"
           locationId="L6B6VEVVCDMBX"
@@ -30,15 +33,18 @@ function Payment({ name, email, quantity, approved, setApproved }) {
                   amount: finalP,
                   buyer_email_address: email,
                 }),
-              }).then((response) => setApproved(response));
+              }).then(async (response) => setApproved(await response.json()));
             } catch {
-              console.log('omg error');
+              alert({
+                message:
+                  'look like we have an error. Refresh the page and try again',
+              });
+              router.push('/')
             }
           }}
         >
           <CreditCard />
         </PaymentForm>
-        {approved ? <div className="text-white text-2xl">gucccc</div> : null}
       </div>
     </>
   );
