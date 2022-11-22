@@ -19,10 +19,6 @@ function Confirmed({ name, email, quantity, approved }) {
     { tix: ['Ticket 1', 'Ticket 2', 'Ticket 3', 'Ticket 4'], qt: '4' },
   ];
 
-  // useEffect(() => {
-  //   setTicketInfoNew(ticketInfo);
-  // }, [ticketInfo]);
-
   async function getTickets() {
     setHide(true);
     return numOfTix[index].tix?.map(async () => {
@@ -68,7 +64,7 @@ function Confirmed({ name, email, quantity, approved }) {
         {ticketInfoNew?.map((info, x) => {
           console.log('idx', x);
           return (
-            <div key={info?.ticketId}>
+            <div key={info.ticketId}>
               <TicketTemplate
                 info={info}
                 name={name}
