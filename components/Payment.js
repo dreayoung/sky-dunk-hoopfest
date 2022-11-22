@@ -1,4 +1,3 @@
-import { StylesheetNotLoadedError } from '@square/web-sdk';
 import React, { useState } from 'react';
 import { CreditCard, PaymentForm } from 'react-square-web-payments-sdk';
 
@@ -19,8 +18,8 @@ function Payment({ name, email, quantity, approved, setApproved }) {
           </span>
         </p>
         <PaymentForm
-          applicationId="sandbox-sq0idb-8ypAyI05UH7aFbagoCGOTA"
-          locationId="L6B6VEVVCDMBX"
+          applicationId="sq0idp-FHyz8NyPnFe2c5g4dzbTHQ"
+          locationId="LPCAYPZBND7AN"
           cardTokenizeResponseReceived={async (token, buyer) => {
             try {
               await fetch('/api/ticketcode', {

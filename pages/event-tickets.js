@@ -5,13 +5,9 @@ import title from '../public/title.png';
 import date from '../public/date.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import flyer from '../public/flyer.png';
+
 import pack from '../public/packages.png';
 
-// import steppers from '../public/audio/steppers.mp3';
-// import useSound from 'use-sound';
-
-import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { FaInstagram } from 'react-icons/fa';
 
 function Eventtickets() {
@@ -50,32 +46,11 @@ function Eventtickets() {
           onClick={() => setLoading(true)}
           className=""
         >
-          <div className="mt-4 mb-8 mx-4 uppercase border-transparent rounded-md bg-gray-300 text-black p-8 text-xl text-center">
+          <div className="mt-4 mb-8 mx-4 uppercase border-transparent rounded-md bg-gray-300 text-black p-4 text-md text-center">
             {!loading ? '$30 flash sale tickets' : 'Loading...'}
           </div>
         </Link>
-        <div className="py-4 flex justify-center items-center space-x-2">
-          <span>press play</span>
-          {/* <button
-            onClick={() => {
-              play();
-              setDisable(true);
-            }}
-            disabled={disable}
-          >
-            <AiOutlinePlayCircle
-              className={`${
-                disable
-                  ? 'animate-spin text-gray-700 '
-                  : 'animate-none text-gray-600 '
-              } text-5xl`}
-            />
-          </button> */}
-          <p className="text-xs">
-            <span className="text-xl">Steppers</span>
-            <br /> MoneyBagg Yo
-          </p>
-        </div>
+        <div className="py-4 flex justify-center items-center space-x-2"></div>
         <div className="rounded-md">
           <Image
             priority
