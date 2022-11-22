@@ -3,20 +3,18 @@ import React from 'react';
 
 import juju from '../public/juju.png';
 
-function TicketTemplate({ info, indx, name, quantity, otherKey }) {
+function TicketTemplate({ info, indx, name, quantity }) {
   const { base64EncodedUrl, ticketId } = info;
 
-  console.log(otherKey);
-
   return (
-    <div className="my-2 mx-2 bg-white text-black transition-colors duration-300 transform border cursor-pointer rounded-xl group border-gray-900 shadow-2xl hover:border-orange-700 p-4">
+    <div className=" mx-2 bg-white text-black transition-colors duration-300 transform border cursor-pointer rounded-xl group border-gray-900 shadow-2xl hover:border-orange-700 p-4">
       <div className="flex space-x-4">
         <Image
           src={base64EncodedUrl}
-          width={500}
-          height={500}
+          width={400}
+          height={400}
           alt="flyer"
-          className="w-[8rem] h-[8rem] rounded-md"
+          className="w-[7rem] h-[7rem] rounded-md"
         />
         <div className="">
           <p className="text-lg font-bold fj text-black whitespace-nowrap">
@@ -41,7 +39,7 @@ function TicketTemplate({ info, indx, name, quantity, otherKey }) {
             alt="flyer"
             className="w-6 h-6 rounded-full ring-2 ring-orange-900 ml-10"
           />
-          <span className="text-xs">@JuJuThePromoter</span>
+          <span className="text-xs">JuJu The Promoter</span>
         </div>
         <p className="pt-2 text-xs capitalize">
           <span className="fj text-md">Ticket Holder</span> <br />

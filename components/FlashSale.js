@@ -18,7 +18,7 @@ function FlashSale() {
     <section className="bg-transparent lg:py-12 lg:flex lg:justify-center">
       <div className="bg-transparent lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
         <div className="lg:w-1/2">
-          <div className="h-64 bg-cover lg:rounded-lg lg:h-full bg-[url('/flyer.png')]"></div>
+          <div className="h-72 bg-cover lg:bg-center lg:rounded-lg lg:w-full lg:h-full bg-[url('/flyer.png')]"></div>
         </div>
 
         <div className={`px-6 max-w-xl py-4 lg:max-w-5xl lg:w-1/2`}>
@@ -41,9 +41,9 @@ function FlashSale() {
           <div
             className={`${generatepay ? 'hidden' : 'block '} mt-4 text-white`}
           >
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">
+            <h2 className="text-2xl font-bold text-white md:text-3xl">
               Flash Sale{' '}
-              <span className="text-orange-700 font-bold text-4xl pl-2">
+              <span className="text-orange-700 font-bold text-4xl pl-2 fj">
                 $30
               </span>
             </h2>
@@ -55,7 +55,7 @@ function FlashSale() {
               }}
             >
               <label className="label mt-4">
-                <span className="label-text"># of tickets</span>
+                <span className="label-text text-white"># of tickets</span>
               </label>
               <label className="">
                 <input
@@ -72,7 +72,7 @@ function FlashSale() {
                 />
               </label>
               <label className="label mt-2">
-                <span className="label-text">Your Name</span>
+                <span className="label-text text-white">Your Name</span>
               </label>
               <label className="">
                 <input
@@ -87,7 +87,7 @@ function FlashSale() {
                 />
               </label>
               <label className="label mt-2">
-                <span className="label-text">Your Email</span>
+                <span className="label-text text-white">Your Email</span>
               </label>
               <label className="">
                 <input

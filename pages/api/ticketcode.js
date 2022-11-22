@@ -8,8 +8,8 @@ BigInt.prototype.toJSON = function () {
 
 const { paymentsApi } = new Client({
   accessToken:
-    'EAAAEYUCXum-WzsQZLPAChfx8gXwokN6LiKxOagpuRO_xbUN0jPhICe0CgEPqGmq',
-  environment: Environment.Production,
+    'EAAAEOiqkSJL-TYa2Mnn-SPKk3aaToxJcMD5rPOqOJyLXb29PuvqaMxesTN8iWon',
+  environment: Environment.Sandbox,
 });
 
 export default async function handler(req, res) {

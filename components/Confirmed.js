@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsCheck2Circle } from 'react-icons/bs';
 import TicketTemplate from './TicketTemplate';
 
@@ -19,15 +19,19 @@ function Confirmed({ name, email, quantity, approved }) {
     { tix: ['Ticket 1', 'Ticket 2', 'Ticket 3', 'Ticket 4'], qt: '4' },
   ];
 
+  // useEffect(() => {
+  //   setTicketInfoNew(ticketInfo);
+  // }, [ticketInfo]);
+
   async function getTickets() {
     setHide(true);
     return numOfTix[index].tix?.map(async () => {
       const response = await fetch(
-        'https://apis.ticket-generator.com/client/v1/ticket/data/?eventId=637c2d2c6d72432799b0b693&width=300',
+        'https://apis.ticket-generator.com/client/v1/ticket/data/?eventId=637d01e66d72432799b0d55c&width=300',
         {
           headers: {
             Accept: 'application/json',
-            'X-Api-Key': 'b6c6723b5a798276520e021a7e29654e49209e79fcfab00c',
+            'X-Api-Key': '2c68e8708fb32bf8a14211aaaf947dc1acbd7b1e197a6b7e',
           },
           method: 'POST',
         }
@@ -50,7 +54,7 @@ function Confirmed({ name, email, quantity, approved }) {
           <p className="text-white underline py-2 rounded-md"> Your receipt</p>
         </Link>
       </div>
-      <div className="mt-4 grid grid-cols-1 space-y-6">
+      <div className="mt-4 grid grid-cols-1 space-y-4">
         <button
           className={`${
             hide ? 'bg-gray-900' : 'bg-gray-600'
@@ -58,16 +62,15 @@ function Confirmed({ name, email, quantity, approved }) {
           disabled={hide}
           onClick={getTickets}
         >
-          {hide ? 'Loading...' : 'Reedem Tickets'}
+          {hide ? 'Take a screenshot of your tickets below' : 'Reedem Tickets'}
         </button>
 
         {ticketInfoNew?.map((info, x) => {
           console.log('idx', x);
           return (
-            <div className="pt-6 pb-40" key={info.ticketId}>
+            <div key={info?.ticketId}>
               <TicketTemplate
                 info={info}
-                otherKey={name + x}
                 name={name}
                 indx={x + 1}
                 quantity={quantity}
@@ -75,6 +78,7 @@ function Confirmed({ name, email, quantity, approved }) {
             </div>
           );
         })}
+        <div className="h-20"></div>
       </div>
     </>
   );
