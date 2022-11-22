@@ -8,20 +8,18 @@ BigInt.prototype.toJSON = function () {
 
 const { paymentsApi } = new Client({
   accessToken:
-    'EAAAEOiqkSJL-TYa2Mnn-SPKk3aaToxJcMD5rPOqOJyLXb29PuvqaMxesTN8iWon',
-  environment: Environment.Sandbox,
+    'EAAAEYUCXum-WzsQZLPAChfx8gXwokN6LiKxOagpuRO_xbUN0jPhICe0CgEPqGmq',
+  environment: Environment.Production,
 });
 
 export default async function handler(req, res) {
-  console.log('reee :::::', req.body);
-
   if (req.method === 'POST') {
     const { result } = await paymentsApi.createPayment({
       idempotencyKey: randomUUID(),
       sourceId: req.body.sourceId,
       amountMoney: {
         currency: 'USD',
-        amount: req.body.amount,
+        amount: 1000,
       },
       note: 'The Return of the all black Affair',
       buyer_email_address: req.body.email,

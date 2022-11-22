@@ -9,7 +9,7 @@ function TicketTemplate({ info, indx, name, quantity, otherKey }) {
   console.log(otherKey);
 
   return (
-    <div className="my-8 bg-white text-black transition-colors duration-300 transform border cursor-pointer rounded-xl group border-gray-900 shadow-2xl hover:border-orange-700 p-4">
+    <div className="my-2 mx-2 bg-white text-black transition-colors duration-300 transform border cursor-pointer rounded-xl group border-gray-900 shadow-2xl hover:border-orange-700 p-4">
       <div className="flex space-x-4">
         <Image
           src={base64EncodedUrl}

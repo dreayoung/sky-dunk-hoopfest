@@ -1,6 +1,9 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
+import { FaInstagram } from 'react-icons/fa';
 import Confirmed from './Confirmed';
 import Payment from './Payment';
+import Promoter from './Promoter';
 
 function FlashSale() {
   const [generatepay, setGeneratepay] = useState(false);
@@ -19,21 +22,32 @@ function FlashSale() {
         </div>
 
         <div className={`px-6 max-w-xl py-4 lg:max-w-5xl lg:w-1/2`}>
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">
-            Flash Sale{' '}
-            <span className="text-orange-700 font-bold text-4xl pl-2">$30</span>
-          </h2>
           <p className="mt-4 text-gray-400">
-            Dress Code: All BLACK
-            <br />
             All ticket holders will recieve the address to the venue at the
-            night of the event!
-            <br />
-            For bottle packages contact @jujuthepromter
+            night of the event via email
           </p>
-          <div
-            className={`${generatepay ? 'hidden' : 'block mt-4'} text-white`}
+          <Promoter />
+          <Link
+            href="https://www.instagram.com/unavailable_juju/"
+            target="_blank"
           >
+            <p> For bottle packages contact: </p>
+            <div className="flex items-center space-x-2">
+              <FaInstagram />
+              <span>unavailable_juju</span>
+            </div>
+          </Link>
+          <hr className="mt-6" />
+          <div
+            className={`${generatepay ? 'hidden' : 'block '} mt-4 text-white`}
+          >
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">
+              Flash Sale{' '}
+              <span className="text-orange-700 font-bold text-4xl pl-2">
+                $30
+              </span>
+            </h2>
+            <span className="text-xs">tax included.</span>
             <form
               onSubmit={(e) => {
                 setGeneratepay(true);

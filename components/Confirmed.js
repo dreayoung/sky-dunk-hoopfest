@@ -27,7 +27,7 @@ function Confirmed({ name, email, quantity, approved }) {
         {
           headers: {
             Accept: 'application/json',
-            'X-Api-Key': '2c68e8708fb32bf8a14211aaaf947dc1acbd7b1e197a6b7e',
+            'X-Api-Key': '637c2d2c6d72432799b0b693',
           },
           method: 'POST',
         }
@@ -53,7 +53,7 @@ function Confirmed({ name, email, quantity, approved }) {
       <div className="mt-4 grid grid-cols-1 space-y-6">
         <button
           className={`${
-            hide ? 'bg-orange-900 animate-pulse' : 'bg-orange-700'
+            hide ? 'bg-gray-900' : 'bg-gray-600'
           } p-4 text-white mx-6 rounded-md my-6`}
           disabled={hide}
           onClick={getTickets}
@@ -64,7 +64,7 @@ function Confirmed({ name, email, quantity, approved }) {
         {ticketInfoNew?.map((info, x) => {
           console.log('idx', x);
           return (
-            <div key={info.ticketId}>
+            <div className="pt-6 pb-40" key={info.ticketId}>
               <TicketTemplate
                 info={info}
                 otherKey={name + x}

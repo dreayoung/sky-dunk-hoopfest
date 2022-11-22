@@ -10,17 +10,16 @@ function Payment({ name, email, quantity, approved, setApproved }) {
 
   return (
     <>
-      <hr className="mt-4 text-orange-900" />
       <div className={`${approved ? 'hidden' : 'block'} mt-2`}>
-        <p className="pt-4 text-2xl uppercase mb-4 text-white">
+        <p className="pt-4 text-xl uppercase mb-4 text-white font-bold">
           Total:{' '}
-          <span className="text-lg">
+          <span>
             ${fixedPrice} for {quantity} Ticket(s)
           </span>
         </p>
         <PaymentForm
-          applicationId="sandbox-sq0idb-8ypAyI05UH7aFbagoCGOTA"
-          locationId="L6B6VEVVCDMBX"
+          applicationId="sq0idp-FHyz8NyPnFe2c5g4dzbTHQ"
+          locationId="LPCAYPZBND7AN"
           cardTokenizeResponseReceived={async (token, buyer) => {
             try {
               await fetch('/api/ticketcode', {
@@ -39,7 +38,7 @@ function Payment({ name, email, quantity, approved, setApproved }) {
                 message:
                   'look like we have an error. Refresh the page and try again',
               });
-              router.push('/')
+              router.push('/');
             }
           }}
         >

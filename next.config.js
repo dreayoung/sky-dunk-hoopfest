@@ -15,9 +15,9 @@ module.exports = withTM({
     ];
   },
   reactStrictMode: true,
-  // experimental: {
-  //   esmExternals: 'loose',
-  // },
+  experimental: {
+    esmExternals: 'loose',
+  },
   env: {
     SQ_ACCESS_TKN: process.env.SQ_ACCESS_TKN,
   },
