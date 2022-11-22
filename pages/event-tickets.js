@@ -8,14 +8,14 @@ import Link from 'next/link';
 import flyer from '../public/flyer.png';
 import pack from '../public/packages.png';
 
-import steppers from '../public/audio/steppers.mp3';
-import useSound from 'use-sound';
+// import steppers from '../public/audio/steppers.mp3';
+// import useSound from 'use-sound';
 
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { FaInstagram } from 'react-icons/fa';
 
 function Eventtickets() {
-  const [play] = useSound(steppers);
+  // const [play] = useSound(steppers);
   const [disable, setDisable] = useState(false);
 
   const [loading, setLoading] = useState(false);
@@ -56,7 +56,7 @@ function Eventtickets() {
         </Link>
         <div className="py-4 flex justify-center items-center space-x-2">
           <span>press play</span>
-          <button
+          {/* <button
             onClick={() => {
               play();
               setDisable(true);
@@ -70,7 +70,7 @@ function Eventtickets() {
                   : 'animate-none text-gray-600 '
               } text-5xl`}
             />
-          </button>
+          </button> */}
           <p className="text-xs">
             <span className="text-xl">Steppers</span>
             <br /> MoneyBagg Yo

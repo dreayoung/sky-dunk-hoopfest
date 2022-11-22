@@ -23,11 +23,11 @@ function Confirmed({ name, email, quantity, approved }) {
     setHide(true);
     return numOfTix[index].tix?.map(async () => {
       const response = await fetch(
-        'https://apis.ticket-generator.com/client/v1/ticket/data/?eventId=637d26206d72432799b0df24&width=300',
+        'https://apis.ticket-generator.com/client/v1/ticket/data/?eventId=637d38586d72432799b0e43a&width=300',
         {
           headers: {
             Accept: 'application/json',
-            'X-Api-Key': 'add258dad9169b3098e6b3045d4cd6153ff8d5aaeaec4488',
+            'X-Api-Key': '9b2dbab9984ab721f41c2ae3bc65b1ac0bb8fe388b0e4fc5',
           },
           method: 'POST',
         }
@@ -36,6 +36,8 @@ function Confirmed({ name, email, quantity, approved }) {
       setTicketInfoNew(ticketInfo);
     });
   }
+
+  console.log('info', ticketInfo);
 
   return (
     <>
@@ -53,7 +55,7 @@ function Confirmed({ name, email, quantity, approved }) {
       <div className="mt-4 grid grid-cols-1 space-y-4">
         <button
           className={`${
-            hide ? 'bg-gray-900' : 'bg-gray-600'
+            hide ? 'bg-gray-900 hidden' : 'bg-gray-600'
           } p-4 text-white mx-6 rounded-md my-6`}
           disabled={hide}
           onClick={getTickets}
@@ -62,9 +64,8 @@ function Confirmed({ name, email, quantity, approved }) {
         </button>
 
         {ticketInfoNew?.map((info, x) => {
-          console.log('idx', x);
           return (
-            <div key={info.ticketId}>
+            <div key={info.ticketId * x}>
               <TicketTemplate
                 info={info}
                 name={name}
@@ -74,6 +75,7 @@ function Confirmed({ name, email, quantity, approved }) {
             </div>
           );
         })}
+
         <div className="h-20"></div>
       </div>
     </>

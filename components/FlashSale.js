@@ -22,7 +22,7 @@ function FlashSale() {
         </div>
 
         <div className={`px-6 max-w-xl py-4 lg:max-w-5xl lg:w-1/2`}>
-          <p className="mt-4 text-gray-400">
+          <p className="mt-4 text-gray-300">
             All ticket holders will recieve the address to the venue at the
             night of the event via email
           </p>
@@ -31,8 +31,8 @@ function FlashSale() {
             href="https://www.instagram.com/unavailable_juju/"
             target="_blank"
           >
-            <p> For bottle packages contact: </p>
-            <div className="flex items-center space-x-2">
+            <p className="text-gray-300"> For bottle packages contact: </p>
+            <div className="flex items-center space-x-2 text-gray-300">
               <FaInstagram />
               <span>unavailable_juju</span>
             </div>
