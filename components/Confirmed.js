@@ -23,7 +23,7 @@ function Confirmed({ name, email, quantity, approved }) {
     setHide(true);
     return numOfTix[index].tix?.map(async () => {
       const response = await fetch(
-        'https://apis.ticket-generator.com/client/v1/ticket/data/?eventId=637c2d2c6d72432799b0b693',
+        'https://apis.ticket-generator.com/client/v1/ticket/data/?eventId=637c2d2c6d72432799b0b693&width=300',
         {
           headers: {
             Accept: 'application/json',

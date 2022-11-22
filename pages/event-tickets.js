@@ -43,7 +43,7 @@ function Eventtickets() {
         alt="hello"
         className="absolute top-20 right-4 w-20 transform -translate-x-1/2 -translate-y-1/2 left-1/2"
       />
-      <div className="py-8 flex justify-center items-center">
+      <div className="pt-20 flex justify-center items-center">
         <button
           onClick={() => {
             play();
