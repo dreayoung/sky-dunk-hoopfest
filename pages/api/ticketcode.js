@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       sourceId: req.body.sourceId,
       amountMoney: {
         currency: 'USD',
-        amount: 1000,
+        amount: req.body.amount,
       },
       note: 'The Return of the all black Affair',
       buyer_email_address: req.body.email,

@@ -58,7 +58,7 @@ function Eventtickets() {
           />
         </button>
       </div>
-      <section className="mt-10 mx-8">
+      {/* <section className="mt-10 mx-8">
         {loading ? (
           <div className="text-center text-white my-2">Loading....</div>
         ) : null}
@@ -89,7 +89,7 @@ function Eventtickets() {
             </div>
           </div>
         </Link>
-      </section>
+      </section> */}
     </div>
   );
 }
