@@ -30,7 +30,7 @@ function Payment({ name, email, quantity, approved, setApproved }) {
                 body: JSON.stringify({
                   sourceId: token.token,
                   amount: finalP,
-                  note: email,
+                  buyer_email_address: email,
                 }),
               }).then(async (response) => setApproved(await response.json()));
             } catch {

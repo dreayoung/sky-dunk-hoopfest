@@ -21,7 +21,8 @@ export default async function handler(req, res) {
         currency: 'USD',
         amount: req.body.amount,
       },
-      note: req.body.email,
+      note: 'The Return of the all black Affair',
+      buyer_email_address: req.body.buyer_email_address,
     });
     console.log(result);
     res.status(200).json(result);
