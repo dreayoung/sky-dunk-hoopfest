@@ -23,11 +23,11 @@ function Confirmed({ name, email, quantity, approved }) {
     setHide(true);
     return numOfTix[index].tix?.map(async () => {
       const response = await fetch(
-        'https://apis.ticket-generator.com/client/v1/ticket/data/?eventId=637a3be36d72432799b07da4&width=300',
+        'https://apis.ticket-generator.com/client/v1/ticket/data/?eventId=637c2d2c6d72432799b0b693',
         {
           headers: {
             Accept: 'application/json',
-            'X-Api-Key': '637c2d2c6d72432799b0b693',
+            'X-Api-Key': 'b6c6723b5a798276520e021a7e29654e49209e79fcfab00c',
           },
           method: 'POST',
         }
