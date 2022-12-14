@@ -47,7 +47,7 @@ function Eventtickets() {
           className=""
         >
           <div className="mt-4 mb-8 mx-4 uppercase border-transparent rounded-md bg-gray-300 text-black p-4 text-md text-center">
-            {!loading ? '$30 flash sale tickets' : 'Loading...'}
+            {!loading ? '$45 flash sale tickets' : 'Loading...'}
           </div>
         </Link>
         <div className="py-4 flex justify-center items-center space-x-2"></div>

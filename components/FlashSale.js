@@ -44,7 +44,7 @@ function FlashSale() {
             <h2 className="text-2xl font-bold text-white md:text-3xl">
               Flash Sale{' '}
               <span className="text-orange-700 font-bold text-4xl pl-2 fj">
-                $30
+                $45
               </span>
             </h2>
             <span className="text-xs">tax included.</span>

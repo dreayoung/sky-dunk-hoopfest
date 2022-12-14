@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CreditCard, PaymentForm } from 'react-square-web-payments-sdk';
 
 function Payment({ name, email, quantity, approved, setApproved }) {
-  const fixedPrice = Number(quantity) * 30;
+  const fixedPrice = Number(quantity) * 45;
   const finalP = Number(fixedPrice) * 100;
 
   const [errors, setErrors] = useState(false);
