@@ -41,15 +41,15 @@ function Eventtickets() {
         className="absolute top-20 right-4 w-20 transform -translate-x-1/2 -translate-y-1/2 left-1/2"
       />
       <section className="mt-28 mx-8 lg:mt-40 lg:flex lg:flex-col">
-        <Link
+        {/* <Link
           href="/event-tickets/flashsale"
           onClick={() => setLoading(true)}
           className=""
-        >
+        > */}
           <div className="mt-4 mb-8 mx-4 uppercase border-transparent rounded-md bg-gray-300 text-black p-4 text-md text-center">
-            {!loading ? '$45 flash sale tickets' : 'Loading...'}
+            SALES HAVE ENDED. SEE YOU AT 9PM <br/> TICKET HOLDERS CHECK YOUR EMAILS
           </div>
-        </Link>
+        {/* </Link> */}
         <div className="py-4 flex justify-center items-center space-x-2"></div>
         <div className="rounded-md">
           <Image
