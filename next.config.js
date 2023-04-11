@@ -5,19 +5,9 @@ const withTM = require('next-transpile-modules')([
 ]);
 
 module.exports = withTM({
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/event-tickets',
-        permanent: true,
-      },
-    ];
+  experimental: {
+    esmExternals: 'loose',
   },
-  reactStrictMode: true,
-  // experimental: {
-  //   esmExternals: 'loose',
-  // },
   env: {
     SQ_ACCESS_TKN: process.env.SQ_ACCESS_TKN,
   },

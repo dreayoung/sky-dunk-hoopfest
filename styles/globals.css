@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #030303;
+  background-color: whitesmoke;
 }
 
 a {
@@ -23,13 +23,13 @@ a {
 h1,
 h2,
 .fj {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Wendy One', sans-serif;
 }
 
 span,
 div,
 p {
-  font-family: 'Nanum Gothic Coding', monospace;
+  font-family: 'Lato', sans-serif;
 }
 
 .glassf {
