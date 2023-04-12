@@ -10,6 +10,8 @@ module.exports = withTM({
   },
   env: {
     SQ_ACCESS_TKN: process.env.SQ_ACCESS_TKN,
+    SQ_APPLICATION_ID: process.env.SQ_APPLICATION_ID,
+    MONGODB_URI: process.env.MONGODB_URI,
   },
   webpack(config, options) {
     config.module.rules.push({
