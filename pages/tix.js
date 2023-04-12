@@ -17,7 +17,6 @@ export default function Eventtickets() {
   }, []);
 
   return (
-    // #996AA0
     <>
       <main className="py-24 flex-col justify-center items-center bg-blend-overlay bg-zinc-800">
         <Pricing admTix={data} />
