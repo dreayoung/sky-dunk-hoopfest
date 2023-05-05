@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FaInstagram } from 'react-icons/fa';
 import Confirmed from './Confirmed';
 import Payment from './Payment';
-import Promoter from './Promoter';
+// import Promoter from './Promoter';
 
 function FlashSale() {
   const [generatepay, setGeneratepay] = useState(false);
@@ -15,7 +15,7 @@ function FlashSale() {
   const [approved, setApproved] = useState(null);
 
   return (
-    <section className="bg-transparent lg:py-12 lg:flex lg:justify-center">
+    <section className="bg-black lg:py-12 lg:flex lg:justify-center">
       <div className="bg-transparent lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
         <div className="lg:w-1/2">
           <div className="h-72 bg-cover lg:bg-center lg:rounded-lg lg:w-full lg:h-full bg-[url('/flyer.png')]"></div>
@@ -26,7 +26,7 @@ function FlashSale() {
             All ticket holders will recieve the address to the venue at the
             night of the event via email
           </p>
-          <Promoter />
+          {/* <Promoter /> */}
           <Link
             href="https://www.instagram.com/unavailable_juju/"
             target="_blank"

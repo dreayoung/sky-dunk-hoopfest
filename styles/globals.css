@@ -23,14 +23,14 @@ a {
 h1,
 h2,
 .fj {
-  font-family: 'Wendy One', sans-serif;
+  font-family: 'Vina Sans', sans-serif;
 }
 
-span,
+/* span,
 div,
 p {
   font-family: 'Lato', sans-serif;
-}
+} */
 
 .glassf {
   background: rgba(71, 64, 64, 0.3);

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import juju from '../public/juju.png';
+import underPic from '../public/under.jpg';
 
 function TicketTemplate({ info, indx, name, quantity }) {
   const { base64EncodedUrl, ticketId } = info;
@@ -17,11 +17,11 @@ function TicketTemplate({ info, indx, name, quantity }) {
         />
         <div className="">
           <p className="text-lg font-bold fj text-black whitespace-nowrap">
-            Return of The All Black Affair
+            Sky Dunk HoopFest
           </p>
           <p className="text-xs mb-2 whitespace-nowrap">{`Baller club edition | Ticket #${indx}/${quantity}`}</p>
-          <p className="fj text-sm">Date: December 26, 2023</p>
-          <p className="fj text-sm">Time: 9:00 PM</p>
+          <p className="fj text-sm">Date: April 10, 2024</p>
+          <p className="fj text-sm">Time: 1:00 PM</p>
           <p className="fj text-sm">Dress Code: ALL BLACK</p>
         </div>
       </div>
@@ -32,13 +32,13 @@ function TicketTemplate({ info, indx, name, quantity }) {
         </p>
         <div className="mt-2">
           <Image
-            src={juju}
+            src={underPic}
             width="auto"
             height="auto"
             alt="flyer"
             className="w-6 h-6 rounded-full ring-2 ring-orange-900 ml-10"
           />
-          <span className="text-xs">JuJu The Promoter</span>
+          <span className="text-xs">Sky Dunk</span>
         </div>
         <p className="pt-2 text-xs capitalize">
           <span className="fj text-md">Ticket Holder</span> <br />

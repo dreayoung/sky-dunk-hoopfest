@@ -5,8 +5,11 @@ const withTM = require('next-transpile-modules')([
 ]);
 
 module.exports = withTM({
-  experimental: {
-    esmExternals: 'loose',
+  // experimental: {
+  //   esmExternals: 'loose',
+  // },
+  images: {
+    domains: ['images.pexels.com'],
   },
   env: {
     SQ_ACCESS_TKN: process.env.SQ_ACCESS_TKN,

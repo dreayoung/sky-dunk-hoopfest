@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Return of The Black Affair</title>
+        <title>Sky Dunk HoopFest</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
@@ -44,9 +44,9 @@ function MyApp({ Component, pageProps }) {
         />
         <meta name="twitter:image" content="/flyer.png" />
       </Head>
-      <Header />
+      {/* <Header /> */}
       <Component {...pageProps} />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
