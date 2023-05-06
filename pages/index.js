@@ -35,7 +35,7 @@ export default function Home() {
           </div>
           <div className="space-y-4 lg:px-0 px-8">
             <div className="fj lg:text-6xl text-4xl capitalize font-bold">
-              Skydunk Hoop Fest 2023
+              Skydunk Hoop Fest
             </div>
             <div className="lg:text-xl text-[1rem]">
               123 Anywhere St., Any City, ST 12345
@@ -52,30 +52,24 @@ export default function Home() {
                     className="avatar border-1[px] border-transparent"
                     key={x}
                   >
-                    <div className="lg:w-12 w-10">
+                    <div className="lg:w-12 w-8">
                       <img src={att} alt="avatars" />
                     </div>
                   </div>
                 );
               })}
               <div className="avatar placeholder border-1[px] border-transparent">
-                <div className="w-12 bg-bigy text-zinc-900">
+                <div className="lg:w-12 w-8 bg-bigy text-zinc-900">
                   <span>+99</span>
                 </div>
               </div>
             </div>
-            <div className="flex lg:flex-row flex-col items-center lg:space-x-8 space-y-6 lg:space-y-0">
+            <div className="">
               <button
                 onClick={() => router.push('/tix')}
-                className="lg:w-52 w-full border-[1px] rounded-2xl p-3 text-lg capitalize"
+                className="w-full border-2 border-white rounded-2xl p-3 text-lg capitalize hover:bg-white hover:text-red-500/50 hover:shadow-lg hover:shadow-red-500/50"
               >
                 get tickets
-              </button>
-              <button
-                disabled
-                className="lg:w-52 w-full border-[1px] rounded-2xl p-3 text-lg capitalize"
-              >
-                register here
               </button>
             </div>
           </div>
