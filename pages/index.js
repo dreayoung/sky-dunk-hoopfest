@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="font-mono lg:px-8 px-3 min-h-screen text-zinc-50 flex flex-col justify-center items-center bg-gradient-to-r from-orange-500 to-red-500">
+      <main className="font-mono px-8 min-h-screen text-zinc-50 flex flex-col justify-center items-center bg-gradient-to-r from-orange-500 to-red-500">
         <h1 className="lg:text-4xl text-2xl capitalize absolute top-8">
           #1 basketball tournament
         </h1>
@@ -33,14 +33,16 @@ export default function Home() {
               alt="flyer"
             />
           </div>
-          <div className="space-y-4 lg:px-0 px-3">
-            <div className="fj lg:text-6xl text-5xl capitalize font-bold">
+          <div className="space-y-4 lg:px-0 px-8">
+            <div className="fj lg:text-6xl text-4xl capitalize font-bold">
               Skydunk Hoop Fest 2023
             </div>
-            <div className="lg:text-xl text-lg">
+            <div className="lg:text-xl text-[1rem]">
               123 Anywhere St., Any City, ST 12345
             </div>
-            <div className="lg:text-xl text-lg">Monday August 5th, 1:00PM</div>
+            <div className="lg:text-xl text-[1rem]">
+              Monday August 5th, 1:00PM
+            </div>
             <p className="text-zinc-200">Attending</p>
             {/* <hr/> */}
             <div className="avatar-group -space-x-6 pb-2">
@@ -50,7 +52,7 @@ export default function Home() {
                     className="avatar border-1[px] border-transparent"
                     key={x}
                   >
-                    <div className="w-12">
+                    <div className="lg:w-12 w-10">
                       <img src={att} alt="avatars" />
                     </div>
                   </div>
