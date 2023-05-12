@@ -9,7 +9,7 @@ module.exports = withTM({
   //   esmExternals: 'loose',
   // },
   images: {
-    domains: ['images.pexels.com'],
+    domains: ['images.pexels.com', 'static.vecteezy.com'],
   },
   env: {
     SQ_ACCESS_TKN: process.env.SQ_ACCESS_TKN,

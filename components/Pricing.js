@@ -1,44 +1,61 @@
 import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
-export default function Pricing({ admTix }) {
+export default function Pricing({ admTix, userName }) {
   const router = useRouter();
-  console.log('inside', admTix);
+  const [selectedTix, setSelectedTix] = useState(null);
+  const [selectedSlug, setSlug] = useState(null);
+
+  const [qty, setQty] = useState(1);
+
   return (
     <div className="">
       <div className="container px-6 py-8 mx-auto">
-        <p className="text-xl text-center text-gray-500 dark:text-gray-300">
-          Choose your ticket
-        </p>
-
-        <h1 className="mt-4 text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+        <h1 className="mb-4 text-2xl tracking-wide font-semibold text-center text-gray-800 uppercase lg:text-3xl dark:text-white">
           Admission
         </h1>
+        <p className="font-mono text-3xl capitalize text-center text-gray-500 dark:text-gray-300">
+          Hey <span className="uppercase">{userName}, </span>Choose your ticket
+        </p>
 
         <div className="mt-6 space-y-8 xl:mt-12">
           {admTix?.map((tix, x) => {
+            const checked = selectedTix == tix;
             return (
               <div
-                className="flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border cursor-pointer rounded-xl border-zinc-700"
-                key={tix._id}
+                className={`flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border cursor-pointer rounded-xl ${
+                  checked ? 'border-zinc-200' : 'border-zinc-700'
+                }`}
+                key={tix._id + Math.random()}
               >
                 <div className="flex items-center">
-                  <AiFillCheckCircle className="w-5 h-5 text-gray-600 sm:h-9 sm:w-9" />
+                  <input
+                    type="radio"
+                    name={`option-${tix.name}`}
+                    className="radio"
+                    value={tix.name}
+                    onChange={() => {
+                      setSelectedTix(tix);
+                      setSlug(tix._id);
+                    }}
+                    checked={checked}
+                  />
 
-                  <div className="flex flex-col items-center mx-5 space-y-1">
-                    <h2 className="text-lg sm:text-2xl text-gray-200">
+                  <div className="flex flex-col mx-5 space-y-1">
+                    <h2 className="lg:text-4xl text-xl sm:text-xl text-gray-200">
                       {tix.name}
                     </h2>
 
-                    <div className="px-2 lg:text-xs text-[0.63rem] text-purple-500 rounded-full sm:px-4 sm:py-1 bg-gray-700 ">
-                      Sales end on March 31th, 2024
+                    <div className="lg:text-xs text-[0.63rem] text-red-500 rounded-full sm:py-1">
+                      tickets available
                     </div>
                   </div>
                 </div>
 
-                <h2 className="text-2xl font-semibold text-zinc-300 sm:text-4xl">
-                  ${tix.total_price}{' '}
-                  <span className="text-xs lg:block hidden">/ +tax incl.</span>
+                <h2 className="lg:text-2xl text-[1rem] font-thin font-mono text-zinc-300">
+                  ${tix.total_price}
                 </h2>
               </div>
             );
@@ -46,14 +63,16 @@ export default function Pricing({ admTix }) {
 
           <div className="flex justify-center">
             <button
-              onClick={() => router.push('/tix/admission')}
-              className="px-8 py-2 tracking-wide text-white capitalize transition-colors duration-300 transform bg-purple-600 rounded-md hover:bg-purple-500 focus:outline-none focus:bg-purple-500 focus:ring focus:ring-purple-300 focus:ring-opacity-80"
+              onClick={() => router.push(`/tix/${selectedSlug}`)}
+              disabled={selectedSlug == null}
+              className="px-8 py-2 tracking-wide text-white capitalize hover:ring-2 hover:ring-white rounded-lg"
             >
               Confirm &amp; Pay
             </button>
           </div>
         </div>
       </div>
+      {/* <hr className="w-[85%] m-auto border-zinc-700" /> */}
     </div>
   );
 }

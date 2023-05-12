@@ -1,7 +1,10 @@
+import { Provider } from 'react-redux';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import '../styles/globals.css';
+
+import ReduxStore from '../redux/store';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -44,9 +47,11 @@ function MyApp({ Component, pageProps }) {
         />
         <meta name="twitter:image" content="/flyer.png" />
       </Head>
-      {/* <Header /> */}
-      <Component {...pageProps} />
-      {/* <Footer /> */}
+      <Provider store={ReduxStore}>
+        <Header />
+        <Component {...pageProps} />
+        {/* <Footer /> */}
+      </Provider>
     </>
   );
 }

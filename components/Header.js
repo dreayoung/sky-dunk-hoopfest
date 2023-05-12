@@ -1,7 +1,22 @@
+import Image from "next/image";
+import logo from '../public/NEWdwe3.png';
+
 export default function Header() {
   return (
-    <div className="absolute top-0 text-xs flex justify-evenly items-center py-6 px-10 bg-zinc-700 w-full bg-opacity-50 text-white backdrop-blur-sm">
-      APRIL 10TH 2024 @THE GYM
+    <div className="navbar bg-transparent top-0 px-20 pt-10 shadow-md">
+    <div className="flex-1">
+      <Image src={logo} className="w-24" />
     </div>
+    <div className="flex-none">
+      <ul className="fj menu menu-horizontal px-1 text-2xl tracking-wide">
+        <li>
+          <a>How To</a>
+        </li>
+        <li>
+          <a>Item 3</a>
+        </li>
+      </ul>
+    </div>
+  </div>
   );
 }
