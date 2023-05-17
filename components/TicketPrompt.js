@@ -8,7 +8,7 @@ export default function TicketPrompt({
   return (
     <div className="container px-6 py-8 mx-auto">
       <h1 className="mt-4 tracking-wide text-3xl font-semibold text-center text-gray-800 uppercase lg:text-6xl dark:text-white">
-        What's Your Name?
+        What&apos;s Your Name?
       </h1>
 
       <div className="mt-6 space-y-8 xl:mt-12">

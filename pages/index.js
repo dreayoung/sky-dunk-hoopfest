@@ -24,10 +24,10 @@ export default function Home() {
     <>
       <main className="font-mono lg:px-14 px-8 text-zinc-50 flex flex-col justify-center items-center">
         <section className="flex lg:flex-row flex-col justify-center pb-10 lg:pb-0 mt-8 items-center lg:space-x-8 lg:space-y-0 space-y-8">
-          <div className="rounded-lg">
+          <div className="rounded-lg m-auto">
             <Image
               src={flyer}
-              className="rounded-lg w-96 lg:w-[20rem] lg:h-[23rem]"
+              className="rounded-lg w-64 lg:w-[20rem]"
               alt="flyer"
             />
           </div>
@@ -62,17 +62,23 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="">
+            <div className="flex lg:flex-row flex-col justify-center items-center lg:space-x-3 space-y-5 lg:space-y-0">
               <button
                 onClick={() => router.push('/tix')}
-                className="w-full border-2 border-white rounded-2xl p-3 lg:text-sm text-lg capitalize hover:font-bold hover:bg-white hover:text-red-500/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/50"
+                className="w-full border-2 border-white rounded-2xl p-3 text-sm capitalize hover:font-bold hover:bg-white hover:text-red-500/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/50"
               >
                 get tickets
+              </button>
+              <button
+                onClick={() => router.push('/register')}
+                className="w-full border-2 border-white rounded-2xl p-3 text-sm capitalize hover:font-bold hover:bg-white hover:text-red-500/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/50"
+              >
+                register
               </button>
             </div>
           </div>
         </section>
-        <hr className="border-zinc-700/50 lg:w-[50%] w-full my-20" />
+        <hr className="border-zinc-700/50 lg:w-[50%] w-full my-8" />
         <section className="lg:px-14 px-3 mb-20 flex flex-col lg:flex-row justify-center items-start space-y-8 lg:space-y-0 lg:space-x-8">
           <div>
             <h2 className="text-5xl text-left lg:pb-4 pb-8">Overview</h2>

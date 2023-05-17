@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.14",
     "@reduxjs/toolkit": "^1.9.5",
     "@square/web-sdk": "^2.0.1",
     "daisyui": "^2.41.0",
