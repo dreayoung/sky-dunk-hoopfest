@@ -118,9 +118,9 @@ export default function Register() {
 
       <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 my-10">
         {teams &&
-          teams?.map((team, x) => {
+          teams.map((team, x) => {
             return (
-              <div key={team._id} className="py-5">
+              <div key={x} className="py-5">
                 {/* <div className="w-96 rounded-lg">
                 <Image
                   src={team.logo}
