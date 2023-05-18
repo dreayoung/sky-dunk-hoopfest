@@ -15,15 +15,15 @@ export default function Eventtickets() {
   const [nameAdded, setNameAdded] = useState(false);
   const [error, setError] = useState(false);
 
-  useEffect(() => {
-    // setLoading(true);
-    fetch('/api/tickets')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        // setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // setLoading(true);
+  //   fetch('/api/tickets')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       // setLoading(false);
+  //     });
+  // }, []);
 
   function setName() {
     const enteredName = name.current.value;
@@ -39,7 +39,7 @@ export default function Eventtickets() {
 
   const { user } = useSelector((state) => state.profile);
   const userName = user;
-  console.log(userName)
+  console.log(userName);
 
   return (
     <>
@@ -47,13 +47,14 @@ export default function Eventtickets() {
         {nameAdded ? (
           <Pricing admTix={data} userName={userName} />
         ) : (
-          <TicketPrompt
-            refr={name}
-            setName={setName}
-            setInputName={setInputName}
-            inputName={inputName}
-            error={error}
-          />
+          <div>Hello</div>
+          // <TicketPrompt
+          //   refr={name}
+          //   setName={setName}
+          //   setInputName={setInputName}
+          //   inputName={inputName}
+          //   error={error}
+          // />
         )}
       </main>
     </>
