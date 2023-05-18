@@ -56,7 +56,7 @@ export default function Register() {
         </p>
       </div>
 
-      <div className="grid my-8 border rounded-lg shadow-sm border-zinc-800 md:mb-12 md:grid-cols-2">
+      {/* <div className="grid my-8 border rounded-lg shadow-sm border-zinc-800 md:mb-12 md:grid-cols-2">
         {schedule?.map((sch, x) => {
           return (
             <figure
@@ -77,7 +77,7 @@ export default function Register() {
             </figure>
           );
         })}
-      </div>
+      </div> */}
 
       {/* <section className="flex flex-col justify-center my-8">
         <div className="bg-transparent border-[1px] border-zinc-800 rounded-lg p-8 md:p-12 mb-8">
