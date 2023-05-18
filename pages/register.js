@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import VoteModal from '../components/VoteModal';
 
 import { MdOutlineHowToVote } from 'react-icons/md';
-import { AiFillFire } from 'react-icons/ai';
+import { AiFillFire, AiOutlineLoading } from 'react-icons/ai';
 import { BsPersonCircle } from 'react-icons/bs';
 
 export default function Register() {
@@ -12,6 +12,16 @@ export default function Register() {
   const [open, setOpen] = useState(false);
 
   const cancelButtonRef = useRef(null);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch('/api/teams')
+      .then((res) => res.json())
+      .then((data) => {
+        setTeams(data);
+        setLoading(false);
+      });
+  }, []);
 
   const schedule = [
     {
@@ -36,18 +46,6 @@ export default function Register() {
     },
   ];
 
-  useEffect(() => {
-    setLoading(true);
-    fetch('/api/teams')
-      .then((res) => res.json())
-      .then((data) => {
-        setTeams(data);
-        setLoading(false);
-      });
-  }, [loading]);
-
-  console.log(teams);
-
   return (
     <main className="font-mono lg:pt-14 lg:px-24 px-4 text-zinc-50 flex flex-col justify-center lg:text-left text-center">
       <div>
@@ -57,28 +55,37 @@ export default function Register() {
         </p>
       </div>
 
-      <div className="grid my-8 border rounded-lg shadow-sm border-zinc-800 md:mb-12 md:grid-cols-2">
-        {schedule?.map((sch, x) => {
-          return (
-            <figure
-              key={x}
-              className="flex flex-col justify-center text-sm py-12 px-8 bg-transparent border-b rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r border-zinc-800"
-            >
-              <div className="flex justify-around items-center text-center">
-                <div className="flex flex-col space-y-3">
-                  <div className="">{sch.team[0]}</div>
-                  <span className="font-bold text-zinc-500">vs</span>
-                  <div className="">{sch.team[1]}</div>
-                </div>
-                <hr className="w-20 rotate-90 border-zinc-700" />
-                <div>
-                  {sch.court} <br /> {sch.time}
-                </div>
-              </div>
-            </figure>
-          );
-        })}
-      </div>
+      {loading ? (
+        <div className="flex justify-center items-center py-32">
+          <div className="animate-spin text-xl">
+            <AiOutlineLoading />
+          </div>
+        </div>
+      ) : (
+        <div className="grid my-8 border rounded-lg shadow-sm border-zinc-800 md:mb-12 md:grid-cols-2">
+          {schedule &&
+            schedule?.map((sch, x) => {
+              return (
+                <figure
+                  key={x}
+                  className="flex flex-col justify-center text-sm py-12 px-8 bg-transparent border-b rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r border-zinc-800"
+                >
+                  <div className="flex justify-around items-center text-center">
+                    <div className="flex flex-col space-y-3">
+                      <div className="">{sch.team[0]}</div>
+                      <span className="font-bold text-zinc-500">vs</span>
+                      <div className="">{sch.team[1]}</div>
+                    </div>
+                    <hr className="w-20 rotate-90 border-zinc-700" />
+                    <div>
+                      {sch.court} <br /> {sch.time}
+                    </div>
+                  </div>
+                </figure>
+              );
+            })}
+        </div>
+      )}
 
       <section className="flex flex-col justify-center my-8">
         <div className="bg-transparent border-[1px] border-zinc-800 rounded-lg p-8 md:p-12 mb-8">
@@ -110,10 +117,11 @@ export default function Register() {
       </section>
 
       <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 my-10">
-        {teams?.map((team, x) => {
-          return (
-            <div key={team._id} className="py-5">
-              {/* <div className="w-96 rounded-lg">
+        {teams &&
+          teams?.map((team, x) => {
+            return (
+              <div key={team._id} className="py-5">
+                {/* <div className="w-96 rounded-lg">
                 <Image
                   src={team.logo}
                   width={500}
@@ -122,24 +130,24 @@ export default function Register() {
                   className="object-cover rounded-lg"
                 />
               </div> */}
-              <div className="py-3">
-                <div className="fj text-4xl pb-2 uppercase">{team.name}</div>
-                <div className="flex space-x-2 items-center">
-                  <BsPersonCircle className="text-zinc-400" />
-                  <p className="font-thin">
-                    <span className="font-bold capitalize text-zinc-400">
-                      Coach
-                    </span>{' '}
-                    {team.coach}
-                  </p>
+                <div className="py-3">
+                  <div className="fj text-4xl pb-2 uppercase">{team.name}</div>
+                  <div className="flex space-x-2 items-center">
+                    <BsPersonCircle className="text-zinc-400" />
+                    <p className="font-thin">
+                      <span className="font-bold capitalize text-zinc-400">
+                        Coach
+                      </span>{' '}
+                      {team.coach}
+                    </p>
+                  </div>
                 </div>
+                <button className="mt-4 w-full border-[1px] border-zinc-500 rounded-2xl p-3 text-sm capitalize hover:font-bold hover:bg-white hover:text-red-500/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/50">
+                  Roster
+                </button>
               </div>
-              <button className="mt-4 w-full border-[1px] border-zinc-500 rounded-2xl p-3 text-sm capitalize hover:font-bold hover:bg-white hover:text-red-500/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/50">
-                Roster
-              </button>
-            </div>
-          );
-        })}
+            );
+          })}
       </section>
     </main>
   );
