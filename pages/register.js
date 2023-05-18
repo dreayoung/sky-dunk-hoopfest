@@ -4,6 +4,7 @@ import VoteModal from '../components/VoteModal';
 
 import { MdOutlineHowToVote } from 'react-icons/md';
 import { AiFillFire } from 'react-icons/ai';
+import { BsPersonCircle } from 'react-icons/bs';
 
 export default function Register() {
   const [loading, setLoading] = useState(false);
@@ -43,7 +44,7 @@ export default function Register() {
         setTeams(data);
         setLoading(false);
       });
-  }, []);
+  }, [loading]);
 
   console.log(teams);
 
@@ -56,7 +57,7 @@ export default function Register() {
         </p>
       </div>
 
-      {/* <div className="grid my-8 border rounded-lg shadow-sm border-zinc-800 md:mb-12 md:grid-cols-2">
+      <div className="grid my-8 border rounded-lg shadow-sm border-zinc-800 md:mb-12 md:grid-cols-2">
         {schedule?.map((sch, x) => {
           return (
             <figure
@@ -77,16 +78,16 @@ export default function Register() {
             </figure>
           );
         })}
-      </div> */}
+      </div>
 
-      {/* <section className="flex flex-col justify-center my-8">
+      <section className="flex flex-col justify-center my-8">
         <div className="bg-transparent border-[1px] border-zinc-800 rounded-lg p-8 md:p-12 mb-8">
           <p className="bg-pink-700 text-pink-400 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2">
             <AiFillFire className="w-3 h-3 mr-1" />
-            Pick your best
+            hot
           </p>
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-6">
-            Who do you think is going to win?
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-wide">
+            Pick your best team
           </h1>
           <p className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-6">
             Static websites are now used to bootstrap lots of websites and are
@@ -95,7 +96,7 @@ export default function Register() {
           </p>
           <button
             onClick={() => setOpen(true)}
-            className="bg-pink-700 text-pink-400 inline-flex justify-center items-center py-2.5 px-5 font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-transparent hover:border-[1px] hover:border-pink-500 focus:ring-4 focus:ring-pink-800"
+            className="bg-pink-700 text-pink-400 inline-flex justify-center items-center py-2.5 px-5 font-medium text-center rounded-lg hover:bg-transparent hover:border-[1px] hover:border-pink-500 focus:ring-4 focus:ring-pink-800"
           >
             Vote Here
             <MdOutlineHowToVote className="ml-2 -mr-1 w-4 h-4" />
@@ -106,7 +107,7 @@ export default function Register() {
             cancelButtonRef={cancelButtonRef}
           />
         </div>
-      </section> */}
+      </section>
 
       <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 my-10">
         {teams?.map((team, x) => {
@@ -123,12 +124,15 @@ export default function Register() {
               </div> */}
               <div className="py-3">
                 <div className="fj text-4xl pb-2 uppercase">{team.name}</div>
-                <p className="font-thin">
-                  <span className="font-bold capitalize text-zinc-400">
-                    Coach
-                  </span>{' '}
-                  {team.coach}
-                </p>
+                <div className="flex space-x-2 items-center">
+                  <BsPersonCircle className="text-zinc-400" />
+                  <p className="font-thin">
+                    <span className="font-bold capitalize text-zinc-400">
+                      Coach
+                    </span>{' '}
+                    {team.coach}
+                  </p>
+                </div>
               </div>
               <button className="mt-4 w-full border-[1px] border-zinc-500 rounded-2xl p-3 text-sm capitalize hover:font-bold hover:bg-white hover:text-red-500/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/50">
                 Roster
