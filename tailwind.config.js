@@ -9,6 +9,10 @@ module.exports = {
       colors: {
         bigy: '#fef1c7',
       },
+      fontFamily: {
+        right: 'Righteous',
+        cooke: 'Cookie'
+      },
     },
   },
   plugins: [require('daisyui')],

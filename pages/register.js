@@ -23,6 +23,8 @@ export default function Register() {
       });
   }, []);
 
+  console.log(teams);
+
   const schedule = [
     {
       team: [teams[0]?.name, teams[1]?.name],
@@ -55,7 +57,7 @@ export default function Register() {
         </p>
       </div>
 
-      {loading ? (
+      {!loading ? (
         <div className="flex justify-center items-center py-32">
           <div className="animate-spin text-xl">
             <AiOutlineLoading />
@@ -117,11 +119,10 @@ export default function Register() {
       </section>
 
       <section className="grid lg:grid-cols-3 grid-cols-1 gap-10 my-10">
-        {teams &&
-          teams.map((team, x) => {
-            return (
-              <div key={x} className="py-5">
-                {/* <div className="w-96 rounded-lg">
+        {teams.map((team, x) => {
+          return (
+            <div key={x} className="py-5">
+              {/* <div className="w-96 rounded-lg">
                 <Image
                   src={team.logo}
                   width={500}
@@ -130,24 +131,24 @@ export default function Register() {
                   className="object-cover rounded-lg"
                 />
               </div> */}
-                <div className="py-3">
-                  <div className="fj text-4xl pb-2 uppercase">{team.name}</div>
-                  <div className="flex space-x-2 items-center">
-                    <BsPersonCircle className="text-zinc-400" />
-                    <p className="font-thin">
-                      <span className="font-bold capitalize text-zinc-400">
-                        Coach
-                      </span>{' '}
-                      {team.coach}
-                    </p>
-                  </div>
+              <div className="py-3">
+                <div className="fj text-4xl pb-2 uppercase">{team.name}</div>
+                <div className="flex space-x-2 items-center">
+                  <BsPersonCircle className="text-zinc-400" />
+                  <p className="font-thin">
+                    <span className="font-bold capitalize text-zinc-400">
+                      Coach
+                    </span>{' '}
+                    {team.coach}
+                  </p>
                 </div>
-                <button className="mt-4 w-full border-[1px] border-zinc-500 rounded-2xl p-3 text-sm capitalize hover:font-bold hover:bg-white hover:text-red-500/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/50">
-                  Roster
-                </button>
               </div>
-            );
-          })}
+              <button className="mt-4 w-full border-[1px] border-zinc-500 rounded-2xl p-3 text-sm capitalize hover:font-bold hover:bg-white hover:text-red-500/50 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/50">
+                Roster
+              </button>
+            </div>
+          );
+        })}
       </section>
     </main>
   );

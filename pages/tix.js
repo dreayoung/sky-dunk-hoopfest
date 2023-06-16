@@ -25,37 +25,37 @@ export default function Eventtickets() {
   //     });
   // }, []);
 
-  function setName() {
-    const enteredName = name.current.value;
-    console.log('name ::::', name.current.value);
+  // function setName() {
+  //   const enteredName = name.current.value;
+  //   console.log('name ::::', name.current.value);
 
-    if (inputName.length >= 2) {
-      dispatch(SET_NAME(enteredName));
-      setNameAdded(true);
-    } else {
-      setError(true);
-    }
-  }
+  //   if (inputName.length >= 2) {
+  //     dispatch(SET_NAME(enteredName));
+  //     setNameAdded(true);
+  //   } else {
+  //     setError(true);
+  //   }
+  // }
 
-  const { user } = useSelector((state) => state.profile);
-  const userName = user;
-  console.log(userName);
+  // const { user } = useSelector((state) => state.profile);
+  // const userName = user;
+  // console.log(userName);
 
   return (
     <>
-      <main className="pt-24 min-h-screen flex-col justify-center items-center bg-gradient-to-r from-zinc-900 to-zinc-800">
-        {nameAdded ? (
+      <main className="min-h-screen flex-col justify-center items-center bg-zinc-400">
+      <Pricing />
+        {/* {nameAdded ? (
           <Pricing admTix={data} userName={userName} />
         ) : (
-          <div>Hello</div>
-          // <TicketPrompt
-          //   refr={name}
-          //   setName={setName}
-          //   setInputName={setInputName}
-          //   inputName={inputName}
-          //   error={error}
-          // />
-        )}
+          <TicketPrompt
+            refr={name}
+            setName={setName}
+            setInputName={setInputName}
+            inputName={inputName}
+            error={error}
+          />
+        )} */}
       </main>
     </>
   );

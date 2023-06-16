@@ -1,78 +1,176 @@
-import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
+import {
+  AiFillCheckCircle,
+  AiFillCloseCircle,
+  AiFillCreditCard,
+  AiOutlineArrowLeft,
+  AiOutlineMinusCircle,
+  AiOutlinePlusCircle,
+} from 'react-icons/ai';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import Image from 'next/image';
 
-export default function Pricing({ admTix, userName }) {
+import { BsFillPersonFill } from 'react-icons/bs';
+
+import bb from '../public/bb.png';
+
+import flyer from '../public/flyer2.png';
+
+const attendees = [
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+  'https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png',
+];
+
+export default function Pricing() {
   const router = useRouter();
-  const [selectedTix, setSelectedTix] = useState(null);
-  const [selectedSlug, setSlug] = useState(null);
 
-  const [qty, setQty] = useState(1);
+  let [quantity, setQuantity] = useState(0);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const [generatepay, setGeneratepay] = useState(false);
 
   return (
-    <div className="">
-      <div className="container px-6 py-8 mx-auto">
-        <h1 className="mb-4 text-2xl tracking-wide font-semibold text-center text-gray-800 uppercase lg:text-3xl dark:text-white">
-          Admission
-        </h1>
-        <p className="font-mono text-3xl capitalize text-center text-gray-500 dark:text-gray-300">
-          Hey <span className="uppercase">{userName}, </span>Choose your ticket
-        </p>
-
-        <div className="mt-6 space-y-8 xl:mt-12">
-          {admTix?.map((tix, x) => {
-            const checked = selectedTix == tix;
-            return (
-              <div
-                className={`flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border cursor-pointer rounded-xl ${
-                  checked ? 'border-zinc-200' : 'border-zinc-700'
-                }`}
-                key={tix._id + Math.random()}
+    <>
+      <button
+        className="z-10 absolute flex gap-2 flex-row items-center justify-center top-2 left-4 my-4 lg:text-sm text-xs text-center font-mono tracking-wide bg-transparent w-32 p-3 rounded-full ring-1 ring-zinc-500 text-zinc-500 hover:ring-zinc-200 hover:text-zinc-200 lg:ml-20"
+        onClick={() => router.push('/')}
+      >
+        <AiOutlineArrowLeft />
+        <span>back</span>
+      </button>
+      <div className="lg:px-8 text-zinc-900 py-28">
+        {/* <div className="sd fj text-5xl text-center uppercase">
+          Tickets
+        </div> */}
+        <div className="hover:border-[#7c74ee] rounded-2xl p-3 shadow-xl mt-8 w-3/4 m-auto">
+          <div className="my-6 px-8 flex lg:flex-row flex-col justify-center items-center text-center gap-4">
+            <h3 className="text-5xl">$20</h3>
+            <div className="mb-4 fj flex flex-col justify-center gap-2">
+              <p className="lg:text-2xl text-lg">General Admission</p>
+              <span className="font-mono lg:text-sm text-xs lg:px-8 text-zinc-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </span>
+            </div>
+            <div className="flex flex-row items-center gap-4">
+              <button
+                onClick={() => setQuantity(quantity + 1)}
+                disabled={quantity <= -1 || quantity >= 4}
               >
-                <div className="flex items-center">
+                <AiOutlinePlusCircle className="w-10 h-10 text-[#7c74ee]" />
+              </button>
+              <p className="text-[#7c74ee]">{quantity}</p>
+              <button
+                onClick={() => setQuantity(quantity - 1)}
+                disabled={quantity <= 0 || quantity >= 5}
+              >
+                <AiOutlineMinusCircle className="w-10 h-10 text-[#7c74ee]" />
+              </button>
+            </div>
+          </div>
+          {quantity <= 0 || quantity >= 4 ? null : (
+            <div className="flex flex-col py-8 justify-center items-center px-4">
+              <form
+                onSubmit={(e) => {
+                  setGeneratepay(true);
+                  e.preventDefault();
+                }}
+                className=" w-full"
+              >
+                <div className="flex flex-col font-mono gap-2 pb-8">
+                  <label
+                    for="helper-text"
+                    className="block mb-2 text-sm font-medium text-zinc-500"
+                  >
+                    Full Name
+                  </label>
                   <input
-                    type="radio"
-                    name={`option-${tix.name}`}
-                    className="radio"
-                    value={tix.name}
-                    onChange={() => {
-                      setSelectedTix(tix);
-                      setSlug(tix._id);
+                    required
+                    type="text"
+                    id="name"
+                    placeholder="Name"
+                    className="input input-bordered w-full bg-transparent"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
                     }}
-                    checked={checked}
+                    aria-describedby="helper-text-explanation"
+                    className="bg-transparent border border-zinc-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   />
-
-                  <div className="flex flex-col mx-5 space-y-1">
-                    <h2 className="lg:text-4xl text-xl sm:text-xl text-gray-200">
-                      {tix.name}
-                    </h2>
-
-                    <div className="lg:text-xs text-[0.63rem] text-red-500 rounded-full sm:py-1">
-                      tickets available
-                    </div>
-                  </div>
+                  <label
+                    for="helper-text"
+                    className="block my-2 text-sm font-medium text-zinc-500"
+                  >
+                    Email
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    id="email"
+                    placeholder="info@email.com"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                    aria-describedby="helper-text-explanation"
+                    className="bg-transparent border border-zinc-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  />
                 </div>
 
-                <h2 className="lg:text-2xl text-[1rem] font-thin font-mono text-zinc-300">
-                  ${tix.total_price}
-                </h2>
-              </div>
-            );
-          })}
+                <button
+                  type="submit"
+                  className="w-full text-white bg-[#7c74ee] hover:bg-[#7c74ee]/80 focus:ring-4 focus:outline-none focus:ring-[#7c74ee]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center mr-2 mb-2"
+                >
+                  Check out with Card
+                  <AiFillCreditCard
+                    className="w-5 h-5 ml-2 -mr-1"
+                    aria-hidden="true"
+                  />
+                </button>
+                <p
+                  id="helper-text-explanation"
+                  className="mt-2 text-sm text-gray-500"
+                >
+                  We’ll never share your details. Read our{' '}
+                  <a href="#" class="font-medium text-blue-600 hover:underline">
+                    Privacy Policy
+                  </a>
+                  .
+                </p>
+              </form>
+            </div>
+          )}
+        </div>
 
-          <div className="flex justify-center">
-            <button
-              onClick={() => router.push(`/tix/${selectedSlug}`)}
-              disabled={selectedSlug == null}
-              className="px-8 py-2 tracking-wide text-white capitalize hover:ring-2 hover:ring-white rounded-lg"
-            >
-              Confirm &amp; Pay
-            </button>
+        <div className="hover:border-[#7c74ee] rounded-2xl p-3 shadow-xl mt-8 w-3/4 m-auto">
+          <div className="my-6 px-8 flex lg:flex-row flex-col justify-center items-center text-center gap-4">
+            <h3 className="text-5xl">$50</h3>
+            <div className="mb-4 fj flex flex-col justify-center gap-2">
+              <p className="lg:text-2xl text-lg">VIP Package</p>
+              <span className="font-mono lg:text-sm text-xs lg:px-8 text-zinc-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </span>
+            </div>
+            <div className="flex flex-row items-center">
+              <p className="ring-1 ring-red-800 text-red-800 p-3 rounded-lg w-40 font-mono">
+                Sold out
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      {/* <hr className="w-[85%] m-auto border-zinc-700" /> */}
-    </div>
+    </>
   );
 }

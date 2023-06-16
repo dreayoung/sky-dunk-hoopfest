@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content="/flyer.png" />
       </Head>
       <Provider store={ReduxStore}>
-        <Header />
+        {/* <Header /> */}
         <Component {...pageProps} />
         {/* <Footer /> */}
       </Provider>
