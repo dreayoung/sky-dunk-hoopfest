@@ -100,12 +100,11 @@ export default function Pricing() {
                     type="text"
                     id="name"
                     placeholder="Name"
-                    className="input input-bordered w-full bg-transparent"
                     value={name}
                     onChange={(e) => {
                       setName(e.target.value);
                     }}
-                    aria-describedby="helper-text-explanation"
+                    // aria-describedby="helper-text-explanation"
                     className="bg-transparent border border-zinc-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   />
                   <label
@@ -123,7 +122,7 @@ export default function Pricing() {
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
-                    aria-describedby="helper-text-explanation"
+                    // aria-describedby="helper-text-explanation"
                     className="bg-transparent border border-zinc-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   />
                 </div>

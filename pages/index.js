@@ -93,6 +93,7 @@ export default function Home() {
                   <img
                     src="https://basketball.realgm.com/images/nba/4.2/wiretap/photos/2006/James_LeBron_lal_211023.jpg"
                     className="rounded-box w-72 lg:w-full"
+                    alt="roster"
                   />
                 </div>
               );
